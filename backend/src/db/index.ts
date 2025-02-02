@@ -1,14 +1,14 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { eq } from 'drizzle-orm';
-import { usersTable } from './db/schema;
+import { usersTable } from './schema';
   
 const db = drizzle(process.env.DATABASE_URL!);
 
 async function main() {
   const user: typeof usersTable.$inferInsert = {
     name: 'John',
-    age: 30,
+    id:4321414,
     email: 'john@example.com',
   };
 
@@ -29,7 +29,7 @@ async function main() {
   await db
     .update(usersTable)
     .set({
-      age: 31,
+      name:"reckwit"
     })
     .where(eq(usersTable.email, user.email));
   console.log('User info updated!')
