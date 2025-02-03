@@ -5,5 +5,6 @@ import { Injectable } from '@nestjs/common';
 export class FilesUploadService {
     handleFileUpload(file:Express.Multer.File): string {
         return `File uploaded successfully, ${file.path}`;
+        //do error handling if file is not uploaded
     }
 }
