@@ -14,3 +14,11 @@ export const FileTable=pgTable("files",{
     isPublic:boolean().notNull(),
 })
 
+//friends table
+export const friendsTable = pgTable("friends", {
+    id: serial("id").primaryKey(),
+    userId: integer().notNull(), // Foreign key to users table
+    friendId: integer().notNull(), // Foreign key to users table
+    createdAt: timestamp().notNull().defaultNow(),
+});
+
