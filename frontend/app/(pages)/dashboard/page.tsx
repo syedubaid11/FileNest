@@ -1,5 +1,6 @@
-import { LeftSidebar } from "@/app/components/left-sidebar"
+"use client"
 
+import { LeftSidebar } from "@/app/components/left-sidebar"
 
 //returns react node/children components 
 interface DashboardProps{
