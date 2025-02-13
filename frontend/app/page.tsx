@@ -1,5 +1,7 @@
 import FadingDotsBackground from "./components/fading-dots-background";
 import { Bebas_Neue } from "next/font/google";
+import "./globals.css";
+
 
 const bebasNeue= Bebas_Neue({
   variable:'--font-bebas-neue',
@@ -16,8 +18,8 @@ export default function Home(){
     </div>
     <div className="w-screen h-screen flex items-center justify-center">
     <div className="z-20 text-white flex flex-col items-center">
-        <h1 className={`${bebasNeue.className} text-8xl font-bold mb-4`}>Welcome to FileNest</h1>
-        <p className={`${bebasNeue.className} text-4xl`}>A blazing fast way to share files</p>
+        <h1 className={`${bebasNeue.className} text-8xl font-bold mb-4 animate`}>Welcome to FileNest</h1>
+        <p className={`${bebasNeue.className} text-4xl animate-2`}>A blazing fast way to share files</p>
       </div>
 
     </div>
