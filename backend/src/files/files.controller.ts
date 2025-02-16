@@ -18,7 +18,5 @@ constructor(private filesUploadService:FilesUploadService){}
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     return this.filesUploadService.handleFileUpload(file);
   }
- 
 
-  
 }
