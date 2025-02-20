@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { createClient } from '@supabase/supabase-js';
-import { error } from 'console';
 require ('dotenv').config();
 
 @Injectable()
@@ -21,9 +20,11 @@ export class FilesUploadService {
     
     handleFileUpload(file:Express.Multer.File): string {
         if(!file){
-            throw new error('file not uploaded')
+            return 'file not uploaded'
         }
-        return 'file uploaded successfully'
+        else{
+            return 'file uploaded successfully'
+        }
         
         //do error handling if file is not uploaded
     }

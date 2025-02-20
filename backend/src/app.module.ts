@@ -4,11 +4,11 @@ import { AppService } from './app.service';
 import { FilesModule } from './files/files.module';
 import { UsersModule } from './users/users.module';
 import { AdminModule } from './admin/admin.module';
-import { RedisService } from './redis.service';
+// import { RedisService } from './redis.service';
 
 @Module({
   imports: [FilesModule, UsersModule, AdminModule],
   controllers: [AppController],
-  providers: [AppService],[RedisService]
+  providers: [AppService],//[RedisService]
 })
 export class AppModule {}
