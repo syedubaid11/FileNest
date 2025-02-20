@@ -65,3 +65,41 @@
   }
 }
 
+.animate{
+  animation-name: slidedown;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.animate-2{
+  animation-name: slideup;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+@keyframes slideup {
+  from{
+    transform: translateY(30%);
+    opacity: 0;
+
+  }
+  to{
+    transform:none;
+    opacity: 1; 
+  }
+  
+}
+
+@keyframes slidedown {
+  from{
+    transform: translateY(-40%);
+    opacity: 0;
+
+  }
+  to{
+    transform:none;
+    opacity: 1;
+
+  }
+  
+}
+
