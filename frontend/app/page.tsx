@@ -1,9 +1,9 @@
 "use client"
 
-import FadingDotsBackground from "./components/fading-dots-background";
+import FadingDotsBackground from "../components/ui/fading-dots-background";
 import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./components/navbar";
+import { Navbar } from "../components/ui/navbar";
 import {useRouter} from "next/navigation";
 
 

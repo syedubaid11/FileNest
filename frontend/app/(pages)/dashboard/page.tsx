@@ -1,8 +1,8 @@
 "use client"
 
-import { LeftSidebar } from "@/app/components/left-sidebar"
-import { Button } from "@/app/components/ui/button"
+import { LeftSidebar } from "@/components/ui/left-sidebar"
 import axios from "axios"
+import { Button } from "@/components/ui/button"
 
 //returns react node/children components 
 interface DashboardProps{
