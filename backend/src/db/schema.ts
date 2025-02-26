@@ -22,3 +22,5 @@ export const friendsTable = pgTable("friends", {
     createdAt: timestamp().notNull().defaultNow(),
 });
 
+
+
