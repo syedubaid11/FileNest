@@ -63,7 +63,8 @@ export default function Dashboard(){
                         </div>
                     </div>
 
-                    <div className="w-[400px] h-[300px] border border border-neutral-500 mr-[50px] rounded-lg">
+                    <div className="w-[400px] h-[300px] border border border-grey-500 mr-[50px] rounded-lg shadow-lg">
+                        
 
                     </div>
 
