@@ -5,6 +5,8 @@ import axios from "axios"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs"
+import { useUser } from "@clerk/nextjs"
 
 //returns react node/children components 
 interface DashboardProps{
@@ -12,11 +14,19 @@ interface DashboardProps{
 }
 
 export default function Dashboard(){
+    const {user}=useUser();
+
+    if(!user){
+        return null;
+    }
+
     return(
+        <>
+        <SignedIn>
         <div className="grid grid-cols-[auto_1fr] gap-5">
             {/* left sidebar */}
             <div className="h-screen">
-               <LeftSidebar/>
+               <LeftSidebar imageUrl={`${user.imageUrl}`}/>
             </div>
             
             {/* Right content area */}
@@ -64,7 +74,7 @@ export default function Dashboard(){
                     </div>
 
                     <div className="w-[400px] h-[300px] border border border-grey-500 mr-[50px] rounded-lg shadow-lg">
-                        
+
 
                     </div>
 
@@ -74,5 +84,11 @@ export default function Dashboard(){
 
             </div>
         </div>
+        </SignedIn>
+        <SignedOut>
+            <RedirectToSignIn/>
+        </SignedOut>
+        </>
+
     )
 }

@@ -41,7 +41,6 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
           <SignUpButton/>
         </SignedOut>
         <SignedIn>
-          <UserButton/>
         </SignedIn>
         {children}
       </body>
