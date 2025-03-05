@@ -1,15 +1,22 @@
 import { Injectable } from "@nestjs/common";
-import { DrizzleConfig } from "drizzle-orm";
+import { DrizzleD1Database } from "drizzle-orm/d1"; // Import the correct Drizzle instance
+import { friendsTable } from "../db/schema"; // Import your friends table schema
 
-@Injectable();
-export class FriendsService{
-    constructor(private drizzle:DrizzleConfig){}
-    async sendFriendRequest(senderid:string,receiverid:string):Promise<string>{
-        if(senderid==receiverid){
-            return 'You cannot send a friend req to yourself'
-        }
-        return this.drizzle.create({
-            data:{senderid,receiverid,status:'pending'},
-        })
-        }
+@Injectable()
+export class FriendsService {
+  constructor(private readonly drizzle: DrizzleD1Database) {} // Use the correct type
+
+  async sendFriendRequest(userId: string, friendId: string): Promise<string> {
+    if (senderId === receiverId) {
+      return "You cannot send a friend request to yourself";
+    }
+
+    await this.drizzle.insert(friendsTable).values({
+      userId,
+      friendId,
+      status: "pending",
+    });
+
+    return "Friend request sent successfully!";
+  }
 }
