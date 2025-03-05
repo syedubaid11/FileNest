@@ -7,7 +7,7 @@ export class FriendsService {
   constructor(private readonly drizzle: DrizzleD1Database) {} // Use the correct type
 
   async sendFriendRequest(userId: string, friendId: string): Promise<string> {
-    if (senderId === receiverId) {
+    if (userId===friendId) {
       return "You cannot send a friend request to yourself";
     }
 
