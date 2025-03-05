@@ -11,9 +11,13 @@ export class FriendsService {
       return "You cannot send a friend request to yourself";
     }
 
+    const existingUser=await this.drizzle
+    .select(friendsTable)
+    .from(friends)
+
     await this.drizzle.insert(friendsTable).values({
       userId,
-      friendId,
+      friendId, 
       status: "pending",
     });
 
