@@ -13,7 +13,7 @@ export class friendsController{
 
     @Get("get/:userid")
     async getFriends(@Param("userId") userId:string){
-        return this.friendsService.getFriends(userId)
+        return this.friendsService.getFriend(userId)
     }
 
     

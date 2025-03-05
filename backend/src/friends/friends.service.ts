@@ -23,11 +23,17 @@ export class FriendsService {
   }
 
   async getFriend(userId:string){
-    await this.drizzle
+    
+
+    const get=await this.drizzle
     .select()
     .from(friendsTable)
     .where(
         and(eq(friendsTable.receiverId,userId))
     )
+
+    if(!get){
+        return 'user has no friend'
+    }
   }
 }
