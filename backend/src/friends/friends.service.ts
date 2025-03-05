@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { DrizzleD1Database } from "drizzle-orm/d1"; // Import the correct Drizzle instance
 import { friendsTable } from "../db/schema"; // Import your friends table schema
+import { and, eq } from "drizzle-orm";
 
 @Injectable()
 export class FriendsService {
@@ -11,9 +12,6 @@ export class FriendsService {
       return "You cannot send a friend request to yourself";
     }
 
-    const existingUser=await this.drizzle
-    .select(friendsTable)
-    .from(friends)
 
     await this.drizzle.insert(friendsTable).values({
       userId,
@@ -22,5 +20,14 @@ export class FriendsService {
     });
 
     return "Friend request sent successfully!";
+  }
+
+  async getFriend(userId:string){
+    await this.drizzle
+    .select()
+    .from(friendsTable)
+    .where(
+        and(eq(friendsTable.receiverId,userId))
+    )
   }
 }

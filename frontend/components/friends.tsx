@@ -10,5 +10,19 @@ export const Friends=()=>{
 
     },[])
 
+    const map=friend.map((item)=>{
+        return (
+            <div>
+                {item}
+            </div>
+        )
+    })
+
+    return(
+        <>
+        {map}
+        </>
+    )
+
     
 }
