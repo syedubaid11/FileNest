@@ -52,12 +52,13 @@ export default function Dashboard(){
                 
                 {/* upload - bottom section */}
                 <div className="flex flex-row items-start gap-4 mt-4">
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col gap-[10px] w-full">
                         <div className="w-full max-w-2xl rounded-lg border-dashed h-[300px] border-neutral-500 border">
-                                <div className="h-full w-full flex items-center justify-center">
+                                <div className="h-full w-full flex flex-col gap-[8px] items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                                     </svg>
+                                    <div className="text-gray-600">Drag and Drop , or click here to select file</div>
                                 </div>
                         </div>
                         <div className="flex w-full max-w-2xl justify-center">
