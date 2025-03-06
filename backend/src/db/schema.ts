@@ -17,10 +17,9 @@ export const FileTable=pgTable("files",{
 //friends table
 export const friendsTable = pgTable("friends", {
     id: serial("id").primaryKey(), 
-    userId: integer().notNull(), // foreign key to users table
     senderId:uuid("sender_id").notNull(),
     receiverId:uuid("receiver_id").notNull(),
-    friendId: integer().notNull(), // foreign key to users table
+    friendId: integer(), // foreign key to users table
     createdAt: timestamp().notNull().defaultNow(),
     status:text("status").notNull().default("pending")//status pending
 });

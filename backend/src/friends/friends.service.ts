@@ -7,15 +7,14 @@ import { and, eq } from "drizzle-orm";
 export class FriendsService {
   constructor(private readonly drizzle: DrizzleD1Database) {} // Use the correct type
 
-  async sendFriendRequest(userId: string, friendId: string): Promise<string> {
-    if (userId===friendId) {
+  async sendFriendRequest(senderId: string, receiverId: string): Promise<string> {
+    if (senderId===receiverId) {
       return "You cannot send a friend request to yourself";
     }
-
-
+  
     await this.drizzle.insert(friendsTable).values({
-      userId,
-      friendId, 
+      senderId,
+      receiverId, 
       status: "pending",
     });
 
