@@ -1,17 +1,18 @@
 import { Injectable } from '@nestjs/common';
+import { DrizzleD1Database } from 'drizzle-orm/d1';
 import { db } from 'src/db';
-import { usersTable } from 'src/db/schema';
+import { usersTable } from '../db/schema'
 
 
 @Injectable()
 export class UsersService {
+    constructor(private readonly drizzle: DrizzleD1Database) {} 
     
-    async findByid(id: string) {
-        const user=await db.query.usersTable.findFirst({
-            where : eq(users.id,id),
-
-
-        })        
+    
+    async findByid(id: string):Promise<string> {
+        const user=await this.drizzle.query.usersTable.findFirst({
+            
+        })
 
         throw new Error('Method not implemented.');
     }

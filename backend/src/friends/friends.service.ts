@@ -5,7 +5,7 @@ import { and, eq } from "drizzle-orm";
 
 @Injectable()
 export class FriendsService {
-  constructor(private readonly drizzle: DrizzleD1Database) {} // Use the correct type
+  constructor(private readonly drizzle: DrizzleD1Database) {} 
 
   async sendFriendRequest(senderId: string, receiverId: string): Promise<string> {
     if (senderId===receiverId) {

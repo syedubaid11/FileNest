@@ -1,6 +1,6 @@
 import {integer, varchar , pgTable , serial , timestamp , boolean , uuid,text} from 'drizzle-orm/pg-core'
 
-
+//users table
 export const usersTable=pgTable("users",{
     id:integer().primaryKey(),
     name:varchar({length:255}).notNull(),
@@ -8,6 +8,7 @@ export const usersTable=pgTable("users",{
 
 })
 
+//file table
 export const FileTable=pgTable("files",{
     id:serial("id").primaryKey(),
     uploadedAt:timestamp().notNull(),
