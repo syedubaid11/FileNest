@@ -74,7 +74,7 @@ export default function Dashboard(){
                         </div>
                     </div>
 
-                    <div className="w-[400px] h-[300px] border border border-grey-500 mr-[50px] rounded-lg shadow-lg">
+                    <div className="w-[480px] h-[300px] border border border-grey-500 mr-[50px] rounded-lg shadow-lg">
                         <div className="p-[10px] border-b">
                             Friends 
                         </div>
