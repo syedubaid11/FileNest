@@ -1,14 +1,15 @@
 import { Module } from '@nestjs/common';
 import { DrizzleD1Database } from 'drizzle-orm/d1';
-import { db } from './db'; // Ensure `db` is correctly initialized
+import { db } from './db'; 
+
 
 @Module({
   providers: [
     {
       provide: DrizzleD1Database,
-      useValue: db, // Provide the initialized Drizzle instance
+      useValue: db, 
     },
   ],
-  exports: [DrizzleD1Database], // Export it so other modules can use it
+  exports: [DrizzleD1Database], 
 })
 export class DatabaseModule {}
