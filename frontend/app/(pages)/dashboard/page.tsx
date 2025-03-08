@@ -84,19 +84,26 @@ export default function Dashboard(){
                         </div>
 
                         {/* friends section */}
-                        <div className="w-[200px] md:w-[480px] h-[300px] border border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
-                            <div className="p-[10px] border-b">
-                                Friends 
+                        <div className="flex flex-row gap-[10px] mt-[50px]">
+                            <div className="w-[200px] md:w-[480px] h-[300px] border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
+                                <div className="p-[10px] border-b">
+                                    Friends 
+                                </div>
+                                <div className="p-[5px]">
+                                </div>
                             </div>
-                            <div className="p-[5px]">
-                                
 
+                            <div className="w-[150px] md:w-[480px] h-[300px] border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
+                                <div className="p-[10px] border-b">
+                                    Add friend
+                                </div>
+                                <div className="p-[5px]">
+                                </div>
                             </div>
-
 
 
                         </div>
-
+                     
                 </div>
 
 
