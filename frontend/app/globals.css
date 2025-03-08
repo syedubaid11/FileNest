@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+.bg-brush{
+  background-image: url('../assets/paintbrush.png');
+  background-size:contain;
+  background-position:center;
+  background-repeat: no-repeat;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

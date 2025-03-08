@@ -1,12 +1,13 @@
 "use client"
 
-import { LeftSidebar } from "@/components/ui/left-sidebar"
-import axios from "axios"
-import { Button } from "@/components/ui/button"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { Card, CardHeader, CardTitle } from "@/components/ui/card"
-import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs"
-import { useUser } from "@clerk/nextjs"
+import { LeftSidebar } from "@/components/ui/left-sidebar";
+import axios from "axios";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+import "../../../app/globals.css";
+
 
 //returns react node/children components 
 interface DashboardProps{
@@ -53,7 +54,8 @@ export default function Dashboard(){
                 {/* upload - bottom section */}
                 <div className="flex flex-col w-full md:flex-row md:items-start gap-4 mt-4">
 
-                        <div className="flex flex-col gap-[10px] w-full">
+                        <div className="flex flex-col gap-[10px] w-full ">
+                            {/* the upload area hidden for mobile */}
                             <div className="hidden w-[800px] rounded-lg border-dashed h-[300px] border-neutral-500 border">
                                     <div className="h-full w-full flex flex-col gap-[8px] items-center justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12">
@@ -62,8 +64,14 @@ export default function Dashboard(){
                                         <div className="text-gray-600">Drag and Drop , or click here to select file</div>
                                     </div>
                             </div>
-                            <div className="flex w-full max-w-2xl justify-center">
-                                    <Button variant="outline" size="lg" onClick={async () => { 
+
+                            {/* upload button  */}
+                            <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px]">
+
+                                    <span className="md:hidden text-[40px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
+                                    <span className="text-gray-600">Max size 10mb</span>
+
+                                    <Button className="mt-[10px]" variant="outline" size="lg" onClick={async () => { 
                                         const result = await axios.post('http://localhost:3001/files/upload');
                                         if(result.status === 200){
                                             console.log("file uploaded")
@@ -75,6 +83,7 @@ export default function Dashboard(){
                             </div>
                         </div>
 
+                        {/* friends section */}
                         <div className="w-[200px] md:w-[480px] h-[300px] border border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
                             <div className="p-[10px] border-b">
                                 Friends 
