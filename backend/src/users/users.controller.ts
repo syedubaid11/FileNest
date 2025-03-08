@@ -7,7 +7,7 @@ export class UsersController {
 
     @Get(':id')
     async getUser(@Param('id') id:string){
-        return this.usersService.findByid(id);
+        return this.usersService.findById(id);
     }
     @Get()
     async getUSers(){
