@@ -6,7 +6,7 @@ import { eq } from 'drizzle-orm';
 
 @Injectable()
 export class UsersService {
-  constructor(public readonly drizzle: DrizzleD1Database) {}
+  constructor(private readonly drizzle: DrizzleD1Database) {}
 
   async findById(id: string) {
     const user = await this.drizzle
