@@ -66,7 +66,7 @@ export default function Dashboard(){
                             </div>
 
                             {/* upload button  */}
-                            <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px]">
+                            <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px] bg-red-50 rounded-lg p-[10px]">
 
                                     <span className="md:hidden text-[40px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
                                     <span className="text-gray-600">Max size 10mb</span>
@@ -80,6 +80,10 @@ export default function Dashboard(){
                                             console.log('error while fetching api')
                                         }
                                     }}>Upload</Button>
+                                    <Button>
+                                        Friends
+
+                                    </Button>
                             </div>
                         </div>
 
