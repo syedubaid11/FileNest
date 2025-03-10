@@ -66,28 +66,34 @@ export default function Dashboard(){
                             </div>
 
                             {/* upload button  */}
-                            <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px] bg-red-50 rounded-lg p-[10px]">
+                            <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px] rounded-lg p-[10px]">
+                                   <div className="bg-red-50 p-[10px] rounded-xl">
 
-                                    <span className="md:hidden text-[40px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
-                                    <span className="text-gray-600">Max size 10mb</span>
+                                        <span className="md:hidden text-[35px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
+                                        <div className="text-gray-600 ">Max size 10mb</div>
+                                    </div>
 
-                                    <Button className="mt-[10px]" variant="outline" size="lg" onClick={async () => { 
-                                        const result = await axios.post('http://localhost:3001/files/upload');
-                                        if(result.status === 200){
-                                            console.log("file uploaded")
-                                        }
-                                        else{
-                                            console.log('error while fetching api')
-                                        }
-                                    }}>Upload</Button>
-                                    <Button>
-                                        Friends
+                                     
+                                    <div className="flex flex-row items-center justify-center mt-[10px] gap-[10px] border bg-gray-100 z-10">
+                                        <Button className="" variant="outline" size="lg" onClick={async () => { 
+                                            const result = await axios.post('http://localhost:3001/files/upload');
+                                            if(result.status === 200){
+                                                console.log("file uploaded")
+                                            }
+                                            else{
+                                                console.log('error while fetching api')
+                                            }
+                                        }}>Upload</Button>
+                                        <Button className="" variant="outline" size="lg">
+                                            Friends
 
-                                    </Button>
+                                        </Button>
+                                    </div>
+
                             </div>
                         </div>
 
-                        {/* friends section */}
+                        {/* friends section  hidden mobile for now*/}
                         <div className="flex flex-row gap-[10px] mt-[50px]">
                             <div className="w-[200px] md:w-[480px] h-[300px] border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
                                 <div className="p-[10px] border-b">
