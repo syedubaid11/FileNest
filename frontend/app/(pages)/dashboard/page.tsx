@@ -74,7 +74,7 @@ export default function Dashboard(){
                                     </div>
 
                                      
-                                    <div className="flex flex-row items-center justify-center mt-[10px] gap-[10px] border bg-gray-100 z-10">
+                                    <div className="flex flex-row items-center justify-center mt-[10px] gap-[10px] bg-gray-50 p-[5px] z-10 rounded-md">
                                         <Button className="" variant="outline" size="lg" onClick={async () => { 
                                             const result = await axios.post('http://localhost:3001/files/upload');
                                             if(result.status === 200){
@@ -94,7 +94,7 @@ export default function Dashboard(){
                         </div>
 
                         {/* friends section  hidden mobile for now*/}
-                        <div className="flex flex-row gap-[10px] mt-[50px]">
+                        <div className="hidden md:flex flex-row gap-[10px] mt-[50px]">
                             <div className="w-[200px] md:w-[480px] h-[300px] border border-grey-500 md:mr-[50px] rounded-lg shadow-lg">
                                 <div className="p-[10px] border-b">
                                     Friends 
