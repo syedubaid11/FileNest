@@ -7,14 +7,23 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import "../../../app/globals.css";
-
+import { MobileNavbar } from "@/components/ui/mobilenavbar";
+import { useState } from "react";
+import { Upload } from "@/components/ui/upload";
 
 //returns react node/children components 
 interface DashboardProps{
     children:React.ReactNode,
 }
 
+
+
+
 export default function Dashboard(){
+    const [upload,setUpload]=useState<boolean>(true);
+    const [friends,setFriend]=useState<boolean>(false);
+   
+
     const {user}=useUser();
 
     if(!user){
@@ -24,6 +33,10 @@ export default function Dashboard(){
     return(
         <>
         <SignedIn>
+       {/* navbar for mobile */}
+       <MobileNavbar/>
+
+
         <div className="md:grid md:grid-cols-[auto_1fr] md:gap-5 flex flex-col items-center ">
             {/* left sidebar */}
             <div className="h-screen hidden">
@@ -32,29 +45,13 @@ export default function Dashboard(){
             
             {/* Right content area */}
             <div className="flex flex-col gap-5">
-                {/* cards - top section hidden for mobile*/}
-                <div className="hidden grid grid-cols-3 gap-4 mt-[12px]">
-                    <Card className="h-[150px]">
-                        <CardHeader>
-                            <CardTitle>Secure Transfers</CardTitle>
-                        </CardHeader>
-                    </Card>
-                    <Card className="h-[150px]">
-                        <CardHeader>
-                            <CardTitle>Secure Transfers</CardTitle>
-                        </CardHeader>
-                    </Card>
-                    <Card className="h-[150px]">
-                        <CardHeader>
-                            <CardTitle>Secure Transfers</CardTitle>
-                        </CardHeader>
-                    </Card> 
-                </div>
+
                 
                 {/* upload - bottom section */}
                 <div className="flex flex-col w-full md:flex-row md:items-start gap-4 mt-4">
 
                         <div className="flex flex-col gap-[10px] w-full ">
+
                             {/* the upload area hidden for mobile */}
                             <div className="hidden w-[800px] rounded-lg border-dashed h-[300px] border-neutral-500 border">
                                     <div className="h-full w-full flex flex-col gap-[8px] items-center justify-center">
@@ -67,6 +64,7 @@ export default function Dashboard(){
 
                             {/* upload button  */}
                             <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px] rounded-lg p-[10px]">
+
                                    <div className="bg-red-50 p-[10px] rounded-xl">
 
                                         <span className="md:hidden text-[35px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
@@ -74,8 +72,10 @@ export default function Dashboard(){
                                     </div>
 
                                      
-                                    <div className="flex flex-row items-center justify-center mt-[10px] gap-[10px] bg-gray-50 p-[5px] z-10 rounded-md">
+                                    <div className={`flex flex-row items-center justify-center mt-[10px] gap-[10px] bg-gray-100 p-[5px] z-10 rounded-md`}>
                                         <Button className="" variant="outline" size="lg" onClick={async () => { 
+                                            setUpload(true);
+                                            setFriend(false)
                                             const result = await axios.post('http://localhost:3001/files/upload');
                                             if(result.status === 200){
                                                 console.log("file uploaded")
@@ -84,10 +84,21 @@ export default function Dashboard(){
                                                 console.log('error while fetching api')
                                             }
                                         }}>Upload</Button>
-                                        <Button className="" variant="outline" size="lg">
+                                        <Button className="" variant="outline" size="lg" onClick={()=>{setUpload(false),setFriend(true)}}>
                                             Friends
-
                                         </Button>
+                                    </div>
+
+
+                                    <div className={`${upload?"flex flex-row items-center justify-center h-[200px] w-[300px] mt-[20px] border rounded-lg border-gray-400":"hidden"}`}>
+                                        <Upload/>
+                                        
+
+                                    </div>
+                                    <div className={`${friends?"":'hidden'}`}>
+
+                                        friendstab
+
                                     </div>
 
                             </div>
@@ -115,6 +126,8 @@ export default function Dashboard(){
                         </div>
                      
                 </div>
+
+                
 
 
 
