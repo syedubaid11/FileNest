@@ -38,6 +38,7 @@ export default function Dashboard(){
 
 
         <div className="md:grid md:grid-cols-[auto_1fr] md:gap-5 flex flex-col items-center ">
+            
             {/* left sidebar */}
             <div className="h-screen hidden">
                <LeftSidebar imageUrl={`${user.imageUrl}`}/>
@@ -45,10 +46,8 @@ export default function Dashboard(){
             
             {/* Right content area */}
             <div className="flex flex-col gap-5">
-
-                
                 {/* upload - bottom section */}
-                <div className="flex flex-col w-full md:flex-row md:items-start gap-4 mt-4">
+                <div className="flex flex-col w-full md:flex-row md:items-start gap-4 mb-auto">
 
                         <div className="flex flex-col gap-[10px] w-full ">
 
@@ -126,11 +125,6 @@ export default function Dashboard(){
                         </div>
                      
                 </div>
-
-                
-
-
-
             </div>
         </div>
         </SignedIn>
