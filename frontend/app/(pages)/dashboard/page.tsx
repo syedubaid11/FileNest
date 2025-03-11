@@ -93,9 +93,7 @@ export default function Dashboard(){
                                         <Upload/>
                                     </div>
                                     <div className={`${friends?"":'hidden'}`}>
-
                                         <Friends/>
-
                                     </div>
 
                             </div>
