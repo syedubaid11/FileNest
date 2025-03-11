@@ -9,7 +9,8 @@ import { useUser } from "@clerk/nextjs";
 import "../../../app/globals.css";
 import { MobileNavbar } from "@/components/ui/mobilenavbar";
 import { useState } from "react";
-import { Upload } from "@/components/ui/upload";
+import { Upload } from "@/components/upload";
+import { Friends } from "@/components/friends";
 
 //returns react node/children components 
 interface DashboardProps{
@@ -64,7 +65,7 @@ export default function Dashboard(){
                             {/* upload button  */}
                             <div className="flex flex-col w-full max-w-2xl justify-center mt-[200px] rounded-lg p-[10px]">
 
-                                   <div className="bg-red-50 p-[10px] rounded-xl">
+                                   <div className="bg-gray-100 p-[10px] rounded-xl">
 
                                         <span className="md:hidden text-[35px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
                                         <div className="text-gray-600 ">Max size 10mb</div>
@@ -89,14 +90,12 @@ export default function Dashboard(){
                                     </div>
 
 
-                                    <div className={`${upload?"flex flex-row items-center justify-center h-[200px] w-[300px] mt-[20px] border rounded-lg border-gray-400":"hidden"}`}>
+                                    <div className={`${upload?"":"hidden"}`}>
                                         <Upload/>
-                                        
-
                                     </div>
                                     <div className={`${friends?"":'hidden'}`}>
 
-                                        friendstab
+                                        <Friends/>
 
                                     </div>
 
