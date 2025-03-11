@@ -67,7 +67,7 @@ export default function Dashboard(){
 
                                    <div className="bg-gray-100 p-[10px] rounded-xl">
 
-                                        <span className="md:hidden text-[35px]">Upload Your <span className="px-3 py-2 text-yellow-400 font-bold bg-brush text-[35px]">File</span></span>
+                                        <span className="md:hidden text-[35px]">Upload Your <span className="px-3 py-2 text-white font-bold bg-brush text-[35px]">File</span></span>
                                         <div className="text-gray-600 ">Max size 10mb</div>
                                     </div>
 
