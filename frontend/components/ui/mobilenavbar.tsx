@@ -9,7 +9,7 @@ export const MobileNavbar=()=>{
         <SignedIn>
         <div className="flex flex-row items-center justify-center rounded-xl">
 
-        <div className="w-3/4 h-[30px] bg-white/10 backdrop-blur-lg border-white/20 shadow-md">
+        <div className="w-3/4 h-[60px] bg-white/10 backdrop-blur-lg border-white/20 shadow-md">
             <div className="w-[10px] h-[10px]">
                 <img src={user.imageUrl}></img>
             </div>

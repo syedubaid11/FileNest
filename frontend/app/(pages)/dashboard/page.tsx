@@ -36,12 +36,11 @@ export default function Dashboard(){
         <SignedIn>
        {/* navbar for mobile */}
        <MobileNavbar/>
-
-
+       
         <div className="md:grid md:grid-cols-[auto_1fr] md:gap-5 flex flex-col items-center ">
             
             {/* left sidebar */}
-            <div className="h-screen hidden">
+            <div className="md:h-screen hidden">
                <LeftSidebar imageUrl={`${user.imageUrl}`}/>
             </div>
             

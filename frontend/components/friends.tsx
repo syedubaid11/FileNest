@@ -4,7 +4,7 @@ import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 
 export const Friends=()=>{
-    const[friend,setFriend]=useState([])
+    const[friend,setFriend]=useState(['hye','hes'])
     const[friendCode,setFriendCode]=useState("")
 
     useEffect(()=>{
@@ -15,7 +15,7 @@ export const Friends=()=>{
 
     const map=friend.map((item)=>{
         return (
-            <div>
+            <div className="p-[5px] border-b border-t border-gray-200">
                 {item}
             </div>
         )
@@ -27,7 +27,7 @@ export const Friends=()=>{
             <Input type="email" value={friendCode} onChange={(e)=>{setFriendCode(e.target.value)}} placeholder="Enter Friend Code"/>
             <Button type="submit">Add Friend</Button>    
         </div>
-        <div>
+        <div className="">
             {map}
         </div>
         </div>
