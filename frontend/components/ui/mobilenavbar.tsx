@@ -7,17 +7,18 @@ export const MobileNavbar=()=>{
     return(
         <>
         <SignedIn>
-        <div className="flex flex-row items-center justify-center rounded-xl">
+        <div className="flex flex-row items-center justify-center">
 
-        <div className="w-3/4 h-[60px] bg-white/10 backdrop-blur-lg border-white/20 shadow-md">
-            <div className="w-[10px] h-[10px]">
-                <img src={user.imageUrl}></img>
-            </div>
+        <div className=" rounded-xl w-3/4 h-[60px] bg-white/10 backdrop-blur-lg border-white/20 shadow-md flex flex-row items-center p-[10px] justify-between">
+            
             <div>
 
             </div>
             <div>
 
+            </div>
+            <div className="w-[30px] h-[30px]">
+                <img className="rounded-xl"src={user.imageUrl}></img>
             </div>
         </div>
         </div>
