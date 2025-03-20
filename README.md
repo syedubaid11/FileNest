@@ -1,0 +1,1 @@
+FileNest is a simple and efficient file-sharing app that lets users connect as friends, send files to each other, and store them securely in a Supabase bucket. To save storage, files are automatically deleted after a certain period, ensuring efficient space management. Whether you need to share documents, images, or other files, FileNest makes it seamless and hassle-free.
