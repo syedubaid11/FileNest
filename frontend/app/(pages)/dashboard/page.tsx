@@ -23,7 +23,6 @@ interface DashboardProps{
 export default function Dashboard(){
     const [upload,setUpload]=useState<boolean>(true);
     const [friends,setFriend]=useState<boolean>(false);
-   
 
     const {user}=useUser();
 
@@ -72,7 +71,9 @@ export default function Dashboard(){
 
                                      
                                     <div className={`flex flex-row items-center justify-center mt-[10px] gap-[10px] bg-gray-100 p-[5px] z-10 rounded-md`}>
-                                        <Button className="" variant="outline" size="lg" onClick={async () => { 
+                                        
+                                        
+                                        <Button className="" variant="outline" size="lg" onClick={async () => {
                                             setUpload(true);
                                             setFriend(false)
                                             const result = await axios.post('http://localhost:3001/files/upload');
