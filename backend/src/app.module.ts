@@ -8,9 +8,10 @@ import { DrizzleModule } from './drizzle.module';
 import { DatabaseModule } from './database.module';
 // import { RedisService } from './redis.service';
 import { FriendsModule } from './friends/friends.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
-  imports: [FilesModule, UsersModule, AdminModule , DrizzleModule , DatabaseModule, FriendsModule],
+  imports: [FilesModule, UsersModule, AdminModule , DrizzleModule , DatabaseModule, FriendsModule, UploadModule],
   controllers: [AppController],
   providers: [AppService],//[RedisService]
 })
