@@ -7,7 +7,11 @@ export class UploadController {
 
   @Get('presigned-url')
   async getPresignedUrl(@Query('filename') filename: string, @Query('fileType') fileType: string) {
+    if(!filename || !fileType){
+      throw new Error('File name and File Type required');
+    }
     return {
+      message:'Generating Presigned Url ........',
       presignedUrl: await this.uploadService.getPresignedUrl(filename, fileType),
     };
   }
